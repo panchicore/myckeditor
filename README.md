@@ -34,6 +34,16 @@ CKEditor 5 is an ultra-modern JavaScript rich-text editor with MVC architecture,
 
 ## Quick start
 
+### Integration with ValidMind - this is how we make custom builds
+
+1. `git clone -b stable https://github.com/ckeditor/ckeditor5`
+2. `cd ckeditor5/packages/ckeditor5-build-classic`
+3. `npm install`
+4. add a new pluggin `npm install --save-dev @ckeditor/[pluggin-name]`
+5. register the pluggin to `src/ckeditor.js`
+5. build `npm run build`
+6. copy `build` to validmind frontend `cp -R build ../../../frontend/src/ckeditor`
+
 ### CKEditor 5 online builder
 
 The easiest way to start using CKEditor 5 with all the features you need, is to prepare a customized build with the [online builder](https://ckeditor.com/ckeditor-5/online-builder/). All you need to do is choose the preferred predefined build as a base, add all the required plugins, and download the ready-to-use package. Refer to the [Online builder Quick start](https://ckeditor.com/docs/ckeditor5/latest/installation/getting-started/quick-start.html#creating-custom-builds-with-online-builder) guide to follow this installation path.

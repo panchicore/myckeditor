@@ -7,3 +7,6 @@ declare module '*.svg' {
 	const content: string;
 	export default content;
 }
+
+declare module '@wiris/mathtype-ckeditor5';
+
