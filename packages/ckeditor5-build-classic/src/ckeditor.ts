@@ -85,12 +85,12 @@ export default class ClassicEditor extends ClassicEditorBase {
 		TextTransformation,
 		Comments,
 		TrackChanges,
-		RevisionHistory,
 		Autosave,
 		SimpleUploadAdapter,
 		MathType,
 		Mention,
-		SlashCommand
+		SlashCommand,
+		RevisionHistory
 	];
 
 	public static override defaultConfig = {
@@ -156,4 +156,13 @@ export default class ClassicEditor extends ClassicEditorBase {
 			]
 		}
 	};
+
+	public static defaultContextValues = {};
+	private _contextValues = ClassicEditor.defaultContextValues;
+	public get contextValues(): any {
+		return this._contextValues;
+	}
+	public set contextValues( value: any ) {
+		this._contextValues = value;
+	}
 }

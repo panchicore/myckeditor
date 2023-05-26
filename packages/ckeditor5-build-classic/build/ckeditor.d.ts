@@ -37,4 +37,8 @@ export default class ClassicEditor extends ClassicEditorBase {
             })[];
         };
     };
+    static defaultContextValues: {};
+    private _contextValues;
+    get contextValues(): any;
+    set contextValues(value: any);
 }
