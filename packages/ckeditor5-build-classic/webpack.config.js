@@ -12,6 +12,7 @@ const webpack = require( 'webpack' );
 const { bundler, loaders } = require( '@ckeditor/ckeditor5-dev-utils' );
 const { CKEditorTranslationsPlugin } = require( '@ckeditor/ckeditor5-dev-translations' );
 const TerserPlugin = require( 'terser-webpack-plugin' );
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 
 module.exports = {
 	devtool: 'source-map',
@@ -49,11 +50,14 @@ module.exports = {
 			// UI language. Language codes follow the https://en.wikipedia.org/wiki/ISO_639-1 format.
 			// When changing the built-in language, remember to also change it in the editor's configuration (src/ckeditor.js).
 			language: 'en',
-			additionalLanguages: 'all'
+			additionalLanguages: false
 		} ),
 		new webpack.BannerPlugin( {
 			banner: bundler.getLicenseBanner(),
 			raw: true
+		} ),
+		new MiniCssExtractPlugin( {
+			filename: 'styles.css'
 		} )
 	],
 
@@ -62,7 +66,8 @@ module.exports = {
 			loaders.getIconsLoader( { matchExtensionOnly: true } ),
 			loaders.getStylesLoader( {
 				themePath: require.resolve( '@ckeditor/ckeditor5-theme-lark' ),
-				minify: true
+				minify: false,
+				extractToSeparateFile: true
 			} ),
 			loaders.getTypeScriptLoader()
 		]

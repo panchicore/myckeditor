@@ -87,7 +87,7 @@ export default class ClassicEditor extends ClassicEditorBase {
 		TrackChanges,
 		Autosave,
 		SimpleUploadAdapter,
-		MathType,
+		// MathType,
 		Mention,
 		SlashCommand,
 		RevisionHistory
@@ -116,7 +116,7 @@ export default class ClassicEditor extends ClassicEditorBase {
 				'mediaEmbed',
 				'undo',
 				'redo',
-				'MathType'
+				// 'MathType'
 			]
 		},
 		image: {

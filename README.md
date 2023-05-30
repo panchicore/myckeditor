@@ -42,7 +42,10 @@ CKEditor 5 is an ultra-modern JavaScript rich-text editor with MVC architecture,
 4. add a new pluggin `npm install --save-dev @ckeditor/[pluggin-name]`
 5. register the pluggin to `src/ckeditor.js`
 5. build `npm run build`
-6. copy `build` to validmind frontend `cp -R build ../../../frontend/src/ckeditor`
+6. copy `build` to validmind frontend:
+   1. move css to validmind frontend `mv build/styles.* ../../../frontend/public/static/css/ckeditor/`
+   2. copy `build` to validmind frontend `cp -R build ../../../frontend/src/ckeditor`
+   3. all in one command: `mv build/styles.* ../../../frontend/public/static/css/ckeditor/; cp -R build ../../../frontend/src/ckeditor`
 
 ### CKEditor 5 online builder
 
